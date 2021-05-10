@@ -1,0 +1,37 @@
+drug.txt: list of drug names.
+protein.txt: list of protein names.
+disease.txt: list of disease names.
+se.txt: list of side effect names.（副作用）
+drug_dict_map: a complete ID mapping between drug names and DrugBank ID.
+protein_dict_map: a complete ID mapping between protein names and UniProt ID.
+mat_drug_se.txt : Drug-SideEffect association matrix.
+mat_protein_protein.txt : Protein-Protein interaction matrix.
+mat_drug_drug.txt : Drug-Drug interaction matrix.
+mat_protein_disease.txt : Protein-Disease association matrix.
+mat_drug_disease.txt : Drug-Disease association matrix.
+mat_protein_drug.txt : Protein-Drug interaction matrix.
+mat_drug_protein.txt : Drug-Protein interaction matrix.
+
+Similarity_Matrix_Drugs.txt:
+    基于药物化学结构的药物和化合物相似度评分([0,708)为药物，其余为化合物)。
+Similarity_Matrix_Proteins.txt:
+    基于蛋白质一级序列的蛋白质相似性评分。
+mat_drug_protein_homo_protein_drug.txt:
+    药物-蛋白相互作用矩阵，去掉具有相似药物的DTIs(即药物化学结构相似性> 0.6)或具有相似蛋白的DTIs(即蛋白序列相似性> 40%)(见论文)。
+mat_drug_protein_drug.txt:
+    药物-蛋白相互作用矩阵，去掉与药物相互作用相似的DTIs(即Jaccard similarity > 0.6)(见论文)。
+mat_drug_protein_sideeffect.txt:
+    药物-蛋白质相互作用矩阵，去掉具有相似副作用的药物的DTIs(即Jaccard similarity > 0.6)(见论文)。
+mat_drug_protein_disease.txt:
+    药物-蛋白相互作用矩阵，去掉与具有相似疾病的药物或蛋白的DTIs(即Jaccard similarity > 0.6)(见论文)。
+mat_drug_protein_unique:
+    药物-蛋白质相互作用矩阵，其中已知的unique和非unique DTIs分别标记为3和1，对应的未知DTIs分别标记为2和0 (unique的定义见论文)。
+mat_compound_protein_bindingaffinity.txt:
+    复合蛋白结合亲和矩阵(以Ki的负对数测量)。
+
+
+==================================
+实验内容：
+    数据用双层模型跑完，然后拼接。
+
+    小样本实验。
